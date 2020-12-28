@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import UserContext from './userContext';
+import MovieRow from './MovieRow';
 
 class MovieList extends Component {
   render() {
     return (
       <UserContext.Consumer>
-        {(currentUser) => <div>Movie List {currentUser.name}</div>}
+        {(currentUser) => (
+          <React.Fragment>
+            <div>Movie List {currentUser.name}</div> <MovieRow />
+          </React.Fragment>
+        )}
       </UserContext.Consumer>
     );
   }
